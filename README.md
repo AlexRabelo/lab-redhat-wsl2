@@ -18,7 +18,6 @@ Este é o **Lab 1 (base)** do portfólio de Alex Rabelo — Cloud, DevOps & SRE.
 |---------|----------|
 | [lab-rhel-wsl2-tutorial.md](lab-rhel-wsl2-tutorial.md) | Tutorial completo com diagrama Mermaid da arquitetura, passos detalhados e análise crítica |
 | [template_images_rhel_wsl2.md](template_images_rhel_wsl2.md) | Template com 15 placeholders de imagem, exemplos de inserção e checklist de segurança |
-| [design-preview.html](design-preview.html) | Página de demonstração visual do padrão de design (cores, tipografia, componentes) |
 
 ## Como usar este lab
 
@@ -34,15 +33,6 @@ Este é o **Lab 1 (base)** do portfólio de Alex Rabelo — Cloud, DevOps & SRE.
 
 ---
 
-## Padrão de Design Visual
-
-Este repositório adota o padrão de design visual do portfólio (Opção A — Ciano Elétrico), definido em:
-
-- [`docs/design-tokens.css`](docs/design-tokens.css) — tokens de cor, espaçamento, tipografia, bordas e componentes
-- Paleta: fundo `#08090c`, acento ciano `#22d3ee`, azul `#3b82f6`, borda `#1e293b`
-- Componentes: `.btn`, `.btn-primary`, `.btn-outline`, `.card`, `.badge`, `.badge-primary`, `.alert`, `.code`, `.section`, `.container`
-
----
 
 *Última atualização: 08/Nov/2026*  
 *Autor: Alex Luiz Rabelo — Cloud, DevOps & SRE*  

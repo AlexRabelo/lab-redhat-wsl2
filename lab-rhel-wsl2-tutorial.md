@@ -25,11 +25,6 @@ Laboratório de administração Linux com Red Hat Enterprise Linux no Windows Su
 
 ## Visão Geral
 
-<div class="hero">
-  <h1>RHEL 10.2 no WSL2</h1>
-  <p>Ambiente Linux corporativo real no Windows Subsystem for Linux 2. Instalação passo a passo, registro na Red Hat Subscription Manager e preparação para certificações.</p>
-</div>
-
 Este laboratório documenta a instalação do **Red Hat Enterprise Linux (RHEL) 10.2** rodando nativamente no **Windows Subsystem for Linux 2 (WSL2)**, utilizando a assinatura gratuita para desenvolvedores individuais da Red Hat. O objetivo é ter um ambiente Linux corporativo real, com acesso aos repositórios oficiais via `dnf`, para estudos de administração Linux, automação de infraestrutura e preparação para certificações (RHCSA).
 
 Este é o **Lab 1 (base)** do portfólio de Alex Rabelo.
@@ -94,31 +89,31 @@ graph TD
 
 ---
 
-## Passo 1 — Instalar o WSL2 no Windows <span class="badge badge-outline">Instalação</span>
+## Passo 1 — Instalar o WSL2 no Windows
 
 O WSL2 é a camada de virtualização leve da Microsoft que roda um kernel Linux real dentro do Windows, sem necessidade de VMs pesadas (VMware/VirtualBox).
 
 ### No PowerShell (como Administrador):
 
-<div class="card">
-<pre><code class="code powershell"># Habilitar o WSL e a Plataforma de Máquina Virtual
+```powershell
+# Habilitar o WSL e a Plataforma de Máquina Virtual
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></pre>
-</div>
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
 
 Reinicie o Windows após a habilitação.
 
 Defina o WSL2 como versão padrão:
 
-<div class="card">
-<pre><code class="code powershell">wsl --set-default-version 2</code></pre>
-</div>
+```powershell
+wsl --set-default-version 2
+```
 
 Verifique se o WSL está instalado:
 
-<div class="card">
-<pre><code class="code powershell">wsl --list --verbose</code></pre>
-</div>
+```powershell
+wsl --list --verbose
+```
 
 ![WSL2 instalado e listando distribuições](./assets/imgs/lab-rhel-wsl2/wsl-list-verbose.png)
 
@@ -126,7 +121,7 @@ Verifique se o WSL está instalado:
 
 ---
 
-## Passo 2 — Criar conta desenvolvedor na Red Hat <span class="badge badge-outline">Registro</span>
+## Passo 2 — Criar conta desenvolvedor na Red Hat
 
 A Red Hat oferece o **Red Hat Developer Subscription for Individuals**, uma assinatura sem custo que inclui:
 
@@ -150,7 +145,7 @@ A Red Hat oferece o **Red Hat Developer Subscription for Individuals**, uma assi
 
 ---
 
-## Passo 3 — Baixar a imagem RHEL 10.2 para WSL2 <span class="badge badge-outline">Download</span>
+## Passo 3 — Baixar a imagem RHEL 10.2 para WSL2
 
 Na página de downloads da Red Hat, após fazer login, você encontrará a opção **WSL2 image** para a versão desejada.
 
@@ -173,21 +168,19 @@ Na página de downloads da Red Hat, após fazer login, você encontrará a opç�
 
 ---
 
-## Passo 4 — Importar a imagem para o WSL2 <span class="badge badge-outline">Importação</span>
+## Passo 4 — Importar a imagem para o WSL2
 
 No PowerShell (como Administrador):
 
-<div class="card">
-<pre><code class="code powershell"># Criar pasta para armazenar as distribuições WSL
+```powershell
+# Criar pasta para armazenar as distribuições WSL
 mkdir $HOME\WSL
 
 # Importar a imagem RHEL 10.2
-wsl --import RHEL-10.2 $HOME\WSL\RHEL10.2 $HOME\Downloads\rhel-10.2-x86_64-wsl2.wsl</code></pre>
-</div>
+wsl --import RHEL-10.2 $HOME\WSL\RHEL10.2 $HOME\Downloads\rhel-10.2-x86_64-wsl2.wsl
+```
 
-<div class="alert alert-destructive">
-<p><strong>Nota sobre a extensão do arquivo:</strong> O arquivo baixado do portal da Red Hat tem extensão <strong>`.wsl`</strong> (ex: `rhel-10.2-x86_64-wsl2.wsl`). Ele já é um tar compactado pronto para importação direta com `wsl --import` — não é necessário extrair manualmente nem renomear para `.tar.gz`. Se a sua captura de tela mostrar um nome terminado em `.tar.gz`, trata-se do mesmo arquivo compactado; o comando `wsl --import` aceita qualquer arquivo tar válido.</p>
-</div>
+> **Nota sobre a extensão do arquivo:** O arquivo baixado do portal da Red Hat tem extensão **`.wsl`** (ex: `rhel-10.2-x86_64-wsl2.wsl`). Ele já é um tar compactado pronto para importação direta com `wsl --import` — não é necessário extrair manualmente nem renomear para `.tar.gz`. Se a sua captura de tela mostrar um nome terminado em `.tar.gz`, trata-se do mesmo arquivo compactado; o comando `wsl --import` aceita qualquer arquivo tar válido.
 
 ![Comando wsl --import no PowerShell](./assets/imgs/lab-rhel-wsl2/wsl-import-command.png)
 
@@ -253,7 +246,7 @@ Red Hat Enterprise Linux release 10.2
 
 ---
 
-## Passo 5 — Registrar o sistema na Red Hat Subscription Manager <span class="badge badge-outline">Registro</span>
+## Passo 5 — Registrar o sistema na Red Hat Subscription Manager
 
 Sem registro, o sistema não consegue baixar pacotes ou atualizações dos repositórios oficiais da Red Hat.
 
@@ -261,9 +254,9 @@ Sem registro, o sistema não consegue baixar pacotes ou atualizações dos repos
 
 Dentro do WSL (como root):
 
-<div class="card">
-<pre><code class="code bash">subscription-manager register</code></pre>
-</div>
+```bash
+subscription-manager register
+```
 
 ![Execução do subscription-manager register](./assets/imgs/lab-rhel-wsl2/subscription-manager-register.png)
 
@@ -273,21 +266,21 @@ Digite o e-mail e senha da sua conta Red Hat Developer.
 
 Se você gerou uma activation key no [Hybrid Cloud Console](https://console.redhat.com/insights/image-builder):
 
-<div class="card">
-<pre><code class="code bash">subscription-manager register --org ORG_ID --activationkey KEY</code></pre>
-</div>
+```bash
+subscription-manager register --org ORG_ID --activationkey KEY
+```
 
 Ou usando a nova ferramenta `rhc`:
 
-<div class="card">
-<pre><code class="code bash">rhc connect --organization ORG_ID --activation-key KEY</code></pre>
-</div>
+```bash
+rhc connect --organization ORG_ID --activation-key KEY
+```
 
 ### Verificar o registro:
 
-<div class="card">
-<pre><code class="code bash">subscription-manager status</code></pre>
-</div>
+```bash
+subscription-manager status
+```
 
 ![Status do subscription-manager: Registered](./assets/imgs/lab-rhel-wsl2/subscription-manager-status.png)
 
@@ -319,15 +312,15 @@ Connection status for <hostname>:
 
 ---
 
-## Passo 6 — Ver repositórios e atualizar com dnf <span class="badge badge-outline">Configuração</span>
+## Passo 6 — Ver repositórios e atualizar com dnf
 
 Após o registro, os repositórios oficiais da Red Hat ficam disponíveis.
 
 ### Listar repositórios habilitados:
 
-<div class="card">
-<pre><code class="code bash">dnf repolist</code></pre>
-</div>
+```bash
+dnf repolist
+```
 
 ![Repositórios AppStream e BaseOS habilitados](./assets/imgs/lab-rhel-wsl2/dnf-repolist.png)
 
@@ -341,9 +334,9 @@ rhel-10-for-x86_64-baseos-rpms       Red Hat Enterprise Linux 10 for x86_64 - Ba
 
 ### Atualizar o sistema:
 
-<div class="card">
-<pre><code class="code bash">dnf update -y</code></pre>
-</div>
+```bash
+dnf update -y
+```
 
 ![Execução do dnf update](./assets/imgs/lab-rhel-wsl2/dnf-update.png)
 
@@ -359,35 +352,35 @@ dnf install -y vim git wget curl tree htop tmux sudo
 
 ---
 
-## Passo 7 — Configurar usuário padrão no WSL <span class="badge badge-outline">Configuração</span>
+## Passo 7 — Configurar usuário padrão no WSL
 
-Por padrão, o WSL inicia como o usuário `root`. Crie um usuário comum com privilégios `sudo` e defina-o como padrão.
+Por padrão, o WSL inicia como o usuário `root`. É recomendado criar um usuário comum com privilégios `sudo` e defini-lo como padrão.
 
 Dentro do WSL (como root):
 
-<div class="card">
-<pre><code class="code bash">useradd -m -G wheel demo
-passwd demo</code></pre>
-</div>
+```bash
+useradd -m -G wheel demo
+passwd demo
+```
 
 Adicionar ao `/etc/wsl.conf` para definir o usuário padrão automaticamente:
 
-<div class="card">
-<pre><code class="code bash">echo -e "[user]\ndefault=demo" >> /etc/wsl.conf</code></pre>
-</div>
+```bash
+echo -e "[user]\ndefault=demo" >> /etc/wsl.conf
+```
 
 Saia do WSL e, no PowerShell, reinicie a distribuição:
 
-<div class="card">
-<pre><code class="code powershell">wsl --terminate RHEL-10.2
-wsl -d RHEL-10.2</code></pre>
-</div>
+```powershell
+wsl --terminate RHEL-10.2
+wsl -d RHEL-10.2
+```
 
 Agora você entrará automaticamente como o usuário `demo`. Para usar o `sudo`, adicione o usuário ao grupo `wheel` (já feito acima) e instale o `sudo` se necessário:
 
-<div class="card">
-<pre><code class="code bash">dnf install -y sudo</code></pre>
-</div>
+```bash
+dnf install -y sudo
+```
 
 > **Fonte:** [Microsoft — Import any Linux distribution to use with WSL](https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro)
 
@@ -445,7 +438,7 @@ dark tecnológica (`#08090c`, `#22d3ee`, `#3b82f6`), borda raio 16px em
 `#1e293b`, sombra suave, dimensões 1200×675 (16:9) e borrado obrigatório
 de dados pessoais (PII) antes de publicar.
 
-Veja o padrão aplicado em: [design-preview.html](./design-preview.html)
+
 
 ---
 
