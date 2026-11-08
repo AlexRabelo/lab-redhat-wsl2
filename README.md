@@ -55,3 +55,9 @@ Este é o **Lab 1 (base)** do portfólio de Alex Rabelo — Cloud, DevOps & SRE.
 🤖 **Construído com auxílio de IA — revisado, testado e operado por mim.**
 
 Regra de ouro: nunca publicar algo que não consigo explicar linha por linha, rodar sozinho e defender em entrevista técnica.
+
+---
+
+*Última atualização: 08/Nov/2026*  
+*Autor: Alex Luiz Rabelo — Cloud, DevOps & SRE*  
+*Transparência de IA: Este arquivo foi compilado com auxílio de ferramentas de IA com base em fontes oficiais da Red Hat e Microsoft, e revisado/testado manualmente pelo autor.*

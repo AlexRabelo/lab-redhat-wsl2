@@ -80,5 +80,6 @@ Antes de publicar qualquer imagem, **borre ou remova**:
 
 ---
 
-*Template gerado em: 07/11/2026*  
-*Autor: Alex Luiz Rabelo — Cloud, DevOps & SRE*
+*Última atualização: 08/Nov/2026*  
+*Autor: Alex Luiz Rabelo — Cloud, DevOps & SRE*  
+*Transparência de IA: Este arquivo foi compilado com auxílio de ferramentas de IA com base em fontes oficiais da Red Hat e Microsoft, e revisado/testado manualmente pelo autor.*
