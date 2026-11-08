@@ -114,7 +114,7 @@ Verifique se o WSL está instalado:
 wsl --list --verbose
 ```
 
-![WSL2 instalado e listando distribuições](./assets/imgs/lab-rhel-wsl2/wsl-list-after-import.png)
+![WSL2 instalado e listando distribuições](./assets/imgs/lab-rhel-wsl2/wsl-list-verbose.png)
 
 > **Fonte:** [Microsoft — How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
@@ -481,7 +481,7 @@ O principal risco é a dependência da assinatura gratuita da Red Hat (renovaç�
 | Item | Status | Detalhe |
 |------|--------|---------|
 | Tutorial completo (8 passos + método alternativo) | ✅ Concluído | Todas as seções escritas e revisadas |
-| Imagens capturadas | ⚠️ Parcial | 12 de 15 imagens salvas em `assets/imgs/lab-rhel-wsl2/` |
+| Imagens capturadas | ✅ Concluído | 15 de 15 imagens salvas em `assets/imgs/lab-rhel-wsl2/` |
 | Referências de imagem no tutorial | ✅ Ajustadas | Todos os caminhos apontam para arquivos existentes |
 | Comando de importação (`wsl --import`) | ✅ Corrigido | Usa extensão `.wsl` (não `.tar.gz`); nota esclarecedora adicionada |
 | Análise crítica da solução | ✅ Concluída | Pontos fortes e limitações documentados |
@@ -489,23 +489,34 @@ O principal risco é a dependência da assinatura gratuita da Red Hat (renovaç�
 | Transparência de IA | ✅ Concluída | Seção obrigatória no rodapé do tutorial |
 | Data de atualização | ✅ Padronizada | `07/Nov/2026` (formato com mês abreviado) |
 
-### Imagens Pendentes (capturar se necessário)
+### Todas as imagens (15/15)
 
 | # | Arquivo | Seção |
 |---|---------|-------|
 | 01 | `wsl-enable-features.png` | Pré-requisitos (comandos `dism.exe`) |
 | 02 | `wsl-version-2.png` | Pré-requisitos (`wsl --set-default-version 2`) |
 | 03 | `wsl-list-verbose.png` | Pré-requisitos (`wsl --list --verbose` antes da importação) |
+| 04 | `redhat-developer-login.png` | Passo 2 — cadastro/login no Red Hat Developer |
+| 05 | `redhat-download-page-00.png` | Passo 3 — página de downloads RHEL WSL2 |
+| 06 | `wsl-import-command.png` | Passo 4 — comando `wsl --import` |
+| 07 | `wsl-list-after-import.png` | Passo 4 — lista de distribuições após importação |
+| 08 | `wsl-rhel-prompt.png` | Passo 4 — terminal RHEL aberto no WSL2 |
+| 09 | `cat-redhat-release.png` | Passo 4 — verificação da versão |
+| 10 | `subscription-manager-register.png` | Passo 5 — registro na Red Hat |
+| 11 | `subscription-manager-status.png` | Passo 5 — status Registered |
+| 12 | `dnf-repolist.png` | Passo 6 — repositórios AppStream e BaseOS |
+| 13 | `dnf-update.png` | Passo 6 — atualização do sistema |
+| 14 | `wsl-default-user.png` | Passo 7 — usuário padrão no WSL |
+| 15 | `final-wsl-terminal.png` | Passo 8 (final) — RHEL 10.2 pronto para uso |
 
-> **Observação:** As imagens com sufixo `-00` (ex: `redhat-download-page-00.png`, `subscription-manager-status-00.png`) estão salvas no diretório e referenciadas no tutorial. Antes de publicar, borre qualquer dado pessoal (e-mail da Red Hat, nome de usuário do Windows, IPs internos) conforme o checklist de segurança em `TEMPLATE_IMAGES_RHEL_WSL2.md`.
+> **⚠️ Segurança (obrigatório antes de publicar):** Borre ou remova de todas as imagens: nome de usuário real do Windows, e-mail da conta Red Hat, senhas/activation keys, endereços IP internos, nomes de máquina reais e qualquer informação identificável pessoal (PII). Confira o checklist completo em `TEMPLATE_IMAGES_RHEL_WSL2.md`.
 
 ### Próximos Passos
 
-1. Capturar as 3 imagens pendentes listadas acima.
-2. Fazer commit e push das alterações no repositório `AlexRabelo/lab-redhat-wsl2`.
-3. Fazer pin do repositório no perfil do GitHub.
-4. Linkar o site `https://alexrabelo.github.io/` na seção "Destaque" do LinkedIn.
-5. Publicar post no LinkedIn anunciando o portfólio.
+1. Fazer commit e push das alterações no repositório `AlexRabelo/lab-redhat-wsl2`.
+2. Fazer pin do repositório no perfil do GitHub.
+3. Linkar o site `https://alexrabelo.github.io/` na seção "Destaque" do LinkedIn.
+4. Publicar post no LinkedIn anunciando o portfólio.
 
 ---
 
