@@ -427,6 +427,17 @@ O processo:
 | 7 | Red Hat — RHEL supported on WSL | Artículo de suporte | https://access.redhat.com/articles/7115538 |
 | 8 | Red Hat — RHEL 10 on WSL as Podman machine | Artigo complementar | https://developers.redhat.com/articles/2025/05/21/how-use-rhel-10-wsl-podman-machine |
 
+
+---
+
+## Padrão visual das imagens
+
+Todas as capturas de tela e o diagrama Mermaid deste lab seguem o
+**[padrão de design visual](./docs/design-padrao-visual.md)**: paleta
+dark tecnológica (`#08090c`, `#22d3ee`, `#3b82f6`), borda raio 16px em
+`#1e293b`, sombra suave, dimensões 1200×675 (16:9) e borrado obrigatório
+de dados pessoais (PII) antes de publicar.
+
 ---
 
 *Última atualização: 08/Nov/2026*  
