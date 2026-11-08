@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Rabelo — Cloud, DevOps & SRE | Observability Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs/design-telemetry.css">
+<style>
+  /* Ajustes específicos da página de demo */
+  .hero-telemetry {
+    text-align: center;
+    padding: clamp(6rem, 10vw, 10rem) 1rem clamp(4rem, 8vw, 8rem);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .hero-telemetry .name {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--telemetry-cyan), var(--telemetry-indigo));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-telemetry .title {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .terminal-prompt {
+    font-family: 'Source Sans 3', monospace;
+    color: var(--telemetry-cyan);
+    font-size: 0.875rem;
+  }
+  .prompt-span {
+    color: var(--text-primary);
+  }
+  .cta-final {
+    text-align: center;
+    margin-top: clamp(4rem, 8vw, 8rem);
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Telemetry Ticker -->
+<div class="telemetry-ticker">
+  <div class="ticker-container">
+    <div class="ticker-item success">
+      <div class="ticker-dot"></div>
+      <span class="ticker-value">99.9%</span> <span class="ticker-label">SLO Uptime</span>
+    </div>
+    <div class="ticker-item critical">
+      <div class="ticker-dot"></div>
+      <span class="ticker-value">145ms</span> <span class="ticker-label">P95 Latency</span>
+    </div>
+    <div class="ticker-item warning">
+      <div class="ticker-dot"></div>
+      <span class="ticker-value">0</span> <span class="ticker-label">Active Incidents</span>
+    </div>
+    <div class="ticker-item success">
+      <div class="ticker-dot"></div>
+      <span class="ticker-value">12</span> <span class="ticker-label">Nodes Running</span>
+    </div>
+    <div class="ticker-item">
+      <div class="ticker-dot"></div>
+      <span class="ticker-value">4.2k</span> <span class="ticker-label">Req/min</span>
+    </div>
+    <div class="ticker-item">
+      <div class="ticker-dot"></div>
+      <span class="ticker-value">100%</span> <span class="ticker-label">Pods Healthy</span>
+    </div>
+  </div>
+</div>
+
+<header class="hero-telemetry">
+  <div class="terminal-prompt">
+    <span class="prompt-span">alex@workstation:~$</span> cat portfolio.md
+  </div>
+  <h1 class="name">Alex Rabelo</h1>
+  <p class="title">Cloud, DevOps & SRE — Infraestrutura, automação e IA. São Paulo, SP · Dexian Brasil</p>
+  <div class="hero-actions">
+    <a href="https://github.com/AlexRabelo" target="_blank" rel="noopener" class="btn btn-primary">Ver Projetos no GitHub →</a>
+    <a href="https://www.linkedin.com/in/alexrabelo/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn →</a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Observability Console</h2>
+      <p>Métricas e status de infraestrutura em tempo real dos laboratórios.</p>
+    </div>
+    <div class="obs-grid">
+      <div class="obs-card success">
+        <h3>Clusters K8s</h3>
+        <div class="value">3</div>
+        <div class="label">EKS · AKS · GKE ativos</div>
+      </div>
+      <div class="obs-card">
+        <h3>Pipelines CI/CD</h3>
+        <div class="value">12</div>
+        <div class="label">Execuções nas últimas 24h</div>
+      </div>
+      <div class="obs-card warning">
+        <h3>Alertas Pendentes</h3>
+        <div class="value">2</div>
+        <div class="label">Revisão necessária</div>
+      </div>
+      <div class="obs-card critical">
+        <h3>Incidentes P1</h3>
+        <div class="value">0</div>
+        <div class="label">Sem incidentes críticos</div>
+      </div>
+      <div class="obs-card">
+        <h3>Uptime Médio</h3>
+        <div class="value">99.97%</div>
+        <div class="label">Últimos 30 dias</div>
+      </div>
+      <div class="obs-card success">
+        <h3>Imagens WSL2</h3>
+        <div class="value">15/15</div>
+        <div class="value" style="font-size:1rem; font-weight:600;">Capturadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Skills & Competências</h2>
+      <p>Domínio técnico organizado por domínio de atuação.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">Linux & Infra</span>
+          <span class="skill-level">Avançado</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 90%;"></div>
+        </div>
+        <p class="skill-desc">RHEL, Debian, Ubuntu, systemd, dnf, WSL2, administração de missão crítica.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">Cloud AWS & Azure</span>
+          <span class="skill-level">Avançado</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 85%;"></div>
+        </div>
+        <p class="skill-desc">EC2, S3, Lambda, CloudFormation, CodePipeline, Azure Red Hat OpenShift.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">Terraform & IaC</span>
+          <span class="skill-level">Avançado</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 88%;"></div>
+        </div>
+        <p class="skill-desc">Infraestrutura como Código, revisão de planos com LLM, multi-ambiente.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">Docker & Kubernetes</span>
+          <span class="skill-level">Intermediário</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 75%;"></div>
+        </div>
+        <p class="skill-desc">Containers, pods, deployments, serviços, ingress, monitoramento.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">Observabilidade</span>
+          <span class="skill-level">Intermediário</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 70%;"></div>
+        </div>
+        <p class="skill-desc">Zabbix, Dynatrace, Prometheus, Grafana, logs e métricas.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-header">
+          <span class="skill-name">IA para Infra</span>
+          <span class="skill-level">Iniciante</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: 60%;"></div>
+        </div>
+        <p class="skill-desc">RAG, LLMOps, agentes de automação de infraestrutura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Experiência & Operações</h2>
+      <p>Jornada profissional em ambientes de missão crítica, datacenter e cloud computing.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-date">2023 — Presente</span>
+        <span class="timeline-title">Cloud, DevOps & SRE</span>
+        <span class="timeline-org">Dexian Brasil · São Paulo, SP</span>
+        <p class="timeline-desc">Administração Linux (RHEL, CentOS, Debian, Ubuntu), automação de infraestrutura, IaC com Terraform, containers Docker e Kubernetes, pipelines CI/CD e observabilidade.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">2021 — 2023</span>
+        <span class="timeline-title">Suporte Técnico & Consultoria</span>
+        <span class="timeline-org">Diversos clientes · São Paulo, SP</span>
+        <p class="timeline-desc">Ambientes de missão crítica, datacenter e cloud computing. Arquitetura, operações e automação com revisão humana.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-date">2019 — 2021</span>
+        <span class="timeline-title">Técnico de Suporte</span>
+        <span class="timeline-org">São Paulo, SP</span>
+        <p class="timeline-desc">Suporte a infraestrutura de TI, redes, servidores Linux e Windows, help desk avançado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Certificações & Credenciais</h2>
+      <p>Certificações verificadas e estudos em andamento.</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <span class="cert-icon">☁️</span>
+        <div class="cert-title">AZ-900</span>
+        <div class="cert-issuer">Microsoft Azure Fundamentals</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-icon">🛡️</span>
+        <div class="cert-title">SC-900</span>
+        <div class="cert-issuer">Microsoft Security Compliance</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-icon">🐧</span>
+        <div class="cert-title">RHCSA</span>
+        <div class="cert-issuer">Red Hat (Expirado · Out/2017)</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-icon">🎓</span>
+        <div class="cert-title">Mackenzie</span>
+        <div class="cert-issuer">Universidade Presbiteriana Mackenzie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-final">
+  <div class="container">
+    <h2>Vamos conversar</h2>
+    <p>Especialista em Infraestrutura Cloud, DevOps & SRE com foco na junção de TI + IA. Disponível para conversar sobre plataformas de IA, SRE, DevOps e Cloud.</p>
+    <div class="hero-actions">
+      <a href="https://www.linkedin.com/in/alexrabelo/" target="_blank" rel="noopener" class="btn btn-primary">LinkedIn →</a>
+      <a href="https://github.com/AlexRabelo" target="_blank" rel="noopener" class="btn btn-outline">GitHub →</a>
+      <a href="mailto:alexrabelo@gmail.com" class="btn btn-outline">E-mail →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Alex Rabelo · Cloud, DevOps & SRE · São Paulo, SP</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem; color:var(--text-muted);">Estilo visual inspirado em <a href="https://kahumada31.github.io/" target="_blank" rel="noopener" style="color:var(--telemetry-cyan);">SRE & Observability Portfolio Template</a> · Última atualização: 08/Nov/2026</p>
+</footer>
+
+</body>
+</html>
