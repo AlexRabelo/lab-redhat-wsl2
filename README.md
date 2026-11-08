@@ -35,8 +35,8 @@ Este é o **Lab 1 (base)** do portfólio de Alex Rabelo — Cloud, DevOps & SRE.
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| `lab-rhel-wsl2-tutorial.md` | Tutorial completo com diagrama Mermaid da arquitetura, passos detalhados e análise crítica |
-| `TEMPLATE_IMAGES_RHEL_WSL2.md` | Template com 15 placeholders de imagem, exemplos de inserção e checklist de segurança |
+| [lab-rhel-wsl2-tutorial.md](lab-rhel-wsl2-tutorial.md) | Tutorial completo com diagrama Mermaid da arquitetura, passos detalhados e análise crítica |
+| [TEMPLATE_IMAGES_RHEL_WSL2.md](TEMPLATE_IMAGES_RHEL_WSL2.md) | Template com 15 placeholders de imagem, exemplos de inserção e checklist de segurança |
 
 ## Como usar este lab
 
