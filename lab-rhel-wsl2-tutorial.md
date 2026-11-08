@@ -114,7 +114,7 @@ Verifique se o WSL está instalado:
 wsl --list --verbose
 ```
 
-![WSL2 instalado e listando distribuições](./assets/imgs/lab-rhel-wsl2/03-wsl-list-verbose.png)
+![WSL2 instalado e listando distribuições](./assets/imgs/lab-rhel-wsl2/wsl-list-after-import.png)
 
 > **Fonte:** [Microsoft — How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
@@ -138,7 +138,7 @@ A Red Hat oferece o **Red Hat Developer Subscription for Individuals**, uma assi
 4. Acesse [developers.redhat.com/products/rhel/download](https://developers.redhat.com/products/rhel/download)
 5. Faça login com sua conta Red Hat
 
-![Cadastro no Red Hat Developer Program](./assets/imgs/lab-rhel-wsl2/04-redhat-developer-login.png)
+![Cadastro no Red Hat Developer Program](./assets/imgs/lab-rhel-wsl2/redhat-developer-login.png)
 
 > **Fonte:** [Red Hat — No-cost Red Hat Enterprise Linux Individual Developer Subscription: FAQs](https://developers.redhat.com/articles/faqs-no-cost-red-hat-enterprise-linux)
 
@@ -161,7 +161,7 @@ Na página de downloads da Red Hat, após fazer login, você encontrará a opç�
 
 > **Nota:** O arquivo `.wsl` já é um tar compactado pronto para importação direta com `wsl --import`. Não é necessário extrair manualmente.
 
-![Página de downloads RHEL com imagem WSL2 10.2](./assets/imgs/lab-rhel-wsl2/05-redhat-download-page.png)
+![Página de downloads RHEL com imagem WSL2 10.2](./assets/imgs/lab-rhel-wsl2/redhat-download-page-00.png)
 
 > **Fonte:** [Red Hat — Download Red Hat Enterprise Linux (RHEL)](https://developers.redhat.com/products/rhel/download)
 
@@ -179,7 +179,9 @@ mkdir $HOME\WSL
 wsl --import RHEL-10.2 $HOME\WSL\RHEL10.2 $HOME\Downloads\rhel-10.2-x86_64-wsl2.wsl
 ```
 
-![Comando wsl --import no PowerShell](./assets/imgs/lab-rhel-wsl2/06-wsl-import-command.png)
+> **Nota sobre a extensão do arquivo:** O arquivo baixado do portal da Red Hat tem extensão **`.wsl`** (ex: `rhel-10.2-x86_64-wsl2.wsl`). Ele já é um tar compactado pronto para importação direta com `wsl --import` — não é necessário extrair manualmente nem renomear para `.tar.gz`. Se a sua captura de tela mostrar um nome terminado em `.tar.gz`, trata-se do mesmo arquivo compactado; o comando `wsl --import` aceita qualquer arquivo tar válido.
+
+![Comando wsl --import no PowerShell](./assets/imgs/lab-rhel-wsl2/wsl-import-command.png)
 
 Parâmetros do `wsl --import`:
 - `RHEL-10.2` — nome da distribuição como aparecerá no WSL
@@ -220,7 +222,7 @@ Ou, se definida como padrão:
 wsl
 ```
 
-![Terminal RHEL 10.2 aberto no WSL2](./assets/imgs/lab-rhel-wsl2/08-wsl-rhel-prompt.png)
+![Terminal RHEL 10.2 aberto no WSL2](./assets/imgs/lab-rhel-wsl2/wsl-rhel-prompt.png)
 
 ### Verificar a versão:
 
@@ -236,7 +238,7 @@ Saída esperada:
 Red Hat Enterprise Linux release 10.2
 ```
 
-![Saída do comando cat /etc/redhat-release](./assets/imgs/lab-rhel-wsl2/09-cat-redhat-release.png)
+![Saída do comando cat /etc/redhat-release](./assets/imgs/lab-rhel-wsl2/cat-redhat-release.png)
 
 > **Fonte:** [Red Hat — Getting started with RHEL on WSL (maio 2025)](https://developers.redhat.com/articles/2025/05/20/getting-started-rhel-windows-subsystem-linux)  
 > **Fonte:** [Microsoft — Import any Linux distribution to use with WSL](https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro)
@@ -255,7 +257,7 @@ Dentro do WSL (como root):
 subscription-manager register
 ```
 
-![Execução do subscription-manager register](./assets/imgs/lab-rhel-wsl2/10-subscription-manager-register.png)
+![Execução do subscription-manager register](./assets/imgs/lab-rhel-wsl2/subscription-manager-register.png)
 
 Digite o e-mail e senha da sua conta Red Hat Developer.
 
@@ -319,7 +321,7 @@ Após o registro, os repositórios oficiais da Red Hat ficam disponíveis.
 dnf repolist
 ```
 
-![Repositórios AppStream e BaseOS habilitados](./assets/imgs/lab-rhel-wsl2/12-dnf-repolist.png)
+![Repositórios AppStream e BaseOS habilitados](./assets/imgs/lab-rhel-wsl2/dnf-repolist.png)
 
 Saída esperada para RHEL 10.2:
 
@@ -335,7 +337,7 @@ rhel-10-for-x86_64-baseos-rpms       Red Hat Enterprise Linux 10 for x86_64 - Ba
 dnf update -y
 ```
 
-![Execução do dnf update](./assets/imgs/lab-rhel-wsl2/13-dnf-update.png)
+![Execução do dnf update](./assets/imgs/lab-rhel-wsl2/dnf-update.png)
 
 ### Instalar pacotes úteis para estudo:
 
@@ -407,7 +409,7 @@ O processo:
 
 > **Fonte:** [Red Hat — Getting started with RHEL on WSL (Opção 1)](https://developers.redhat.com/articles/2025/05/20/getting-started-rhel-windows-subsystem-linux)
 
-![Tela final do RHEL 10.2 pronto para uso no WSL2](./assets/imgs/lab-rhel-wsl2/15-final-wsl-terminal.png)
+![Tela final do RHEL 10.2 pronto para uso no WSL2](./assets/imgs/lab-rhel-wsl2/final-wsl-terminal.png)
 
 ---
 
@@ -472,6 +474,46 @@ O principal risco é a dependência da assinatura gratuita da Red Hat (renovaç�
 
 ---
 
+## Avaliação Final do Laboratório
+
+### Status de Conclusão
+
+| Item | Status | Detalhe |
+|------|--------|---------|
+| Tutorial completo (8 passos + método alternativo) | ✅ Concluído | Todas as seções escritas e revisadas |
+| Imagens capturadas | ⚠️ Parcial | 12 de 15 imagens salvas em `assets/imgs/lab-rhel-wsl2/` |
+| Referências de imagem no tutorial | ✅ Ajustadas | Todos os caminhos apontam para arquivos existentes |
+| Comando de importação (`wsl --import`) | ✅ Corrigido | Usa extensão `.wsl` (não `.tar.gz`); nota esclarecedora adicionada |
+| Análise crítica da solução | ✅ Concluída | Pontos fortes e limitações documentados |
+| Análise crítica do projeto | ✅ Concluída | Veredito de viabilidade e recomendações |
+| Transparência de IA | ✅ Concluída | Seção obrigatória no rodapé do tutorial |
+| Data de atualização | ✅ Padronizada | `07/Nov/2026` (formato com mês abreviado) |
+
+### Imagens Pendentes (capturar se necessário)
+
+| # | Arquivo | Seção |
+|---|---------|-------|
+| 01 | `wsl-enable-features.png` | Pré-requisitos (comandos `dism.exe`) |
+| 02 | `wsl-version-2.png` | Pré-requisitos (`wsl --set-default-version 2`) |
+| 03 | `wsl-list-verbose.png` | Pré-requisitos (`wsl --list --verbose` antes da importação) |
+
+> **Observação:** As imagens com sufixo `-00` (ex: `redhat-download-page-00.png`, `subscription-manager-status-00.png`) estão salvas no diretório e referenciadas no tutorial. Antes de publicar, borre qualquer dado pessoal (e-mail da Red Hat, nome de usuário do Windows, IPs internos) conforme o checklist de segurança em `TEMPLATE_IMAGES_RHEL_WSL2.md`.
+
+### Próximos Passos
+
+1. Capturar as 3 imagens pendentes listadas acima.
+2. Fazer commit e push das alterações no repositório `AlexRabelo/lab-redhat-wsl2`.
+3. Fazer pin do repositório no perfil do GitHub.
+4. Linkar o site `https://alexrabelo.github.io/` na seção "Destaque" do LinkedIn.
+5. Publicar post no LinkedIn anunciando o portfólio.
+
+---
+
+*Última atualização: 08/Nov/2026*  
+*Avaliador: Alex Luiz Rabelo — Cloud, DevOps & SRE*
+
+---
+
 ## Referências e Fontes Oficiais
 
 | # | Fonte | Tipo | URL |
@@ -487,6 +529,6 @@ O principal risco é a dependência da assinatura gratuita da Red Hat (renovaç�
 
 ---
 
-*Última atualização: 07/11/2026*  
+*Última atualização: 07/Nov/2026*  
 *Autor: Alex Luiz Rabelo — Cloud, DevOps & SRE*  
 *Transparência de IA: Este tutorial foi compilado com auxílio de ferramentas de IA com base em fontes oficiais da Red Hat e Microsoft, e revisado/testado manualmente pelo autor.*
