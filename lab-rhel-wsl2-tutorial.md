@@ -31,6 +31,7 @@ Este é o **Lab 1 (base)** do portfólio de Alex Rabelo.
 
 ### Arquitetura da solução
 
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#08090c', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#22d3ee', 'lineColor': '#3b82f6', 'secondaryColor': '#1e293b', 'tertiaryColor': '#fff' }}}%%
 ```mermaid
 graph TD
     subgraph Windows_Host [Windows 10/11 Host]
@@ -62,9 +63,9 @@ graph TD
     ImageBuilder -->|gera imagem .wsl customizada| Download
     Portal -->|suporte e KB| Subscription
 
-    classDef windows fill:#0078d4,color:#fff;
-    classDef redhat fill:#ce1126,color:#fff;
-    classDef linux fill:#f56106,color:#fff;
+    classDef windows fill:#3b82f6,color:#f8fafc;
+    classDef redhat fill:#22d3ee,color:#08090c;
+    classDef linux fill:#1e293b,color:#f8fafc;
     class Windows_Host,PowerShell,VSCode windows;
     class DevPortal,Subscription,ImageBuilder,Portal redhat;
     class RHEL,Kernel linux;
