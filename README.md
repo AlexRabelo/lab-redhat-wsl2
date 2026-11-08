@@ -33,6 +33,16 @@ Este é o **Lab 1 (base)** do portfólio de Alex Rabelo — Cloud, DevOps & SRE.
 
 ---
 
+## Padrão de Design Visual
+
+Este repositório adota o padrão de design visual do portfólio (Opção A — Ciano Elétrico), definido em:
+
+- [`docs/design-tokens.css`](docs/design-tokens.css) — tokens de cor, espaçamento, tipografia, bordas e componentes
+- Paleta: fundo `#08090c`, acento ciano `#22d3ee`, azul `#3b82f6`, borda `#1e293b`
+- Componentes: `.btn`, `.btn-primary`, `.btn-outline`, `.card`, `.badge`, `.badge-primary`, `.alert`, `.code`, `.section`, `.container`
+
+---
+
 *Última atualização: 08/Nov/2026*  
 *Autor: Alex Luiz Rabelo — Cloud, DevOps & SRE*  
 *Transparência de IA: Este arquivo foi compilado com auxílio de ferramentas de IA com base em fontes oficiais da Red Hat e Microsoft, e revisado/testado manualmente pelo autor.*
