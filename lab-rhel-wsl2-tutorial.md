@@ -208,7 +208,7 @@ NAME          STATE           VERSION
 Ubuntu        Stopped         2
 ```
 
-![Lista de distribuições WSL após a importação](./assets/imgs/lab-rhel-wsl2/07-wsl-list-after-import.png)
+![Lista de distribuições WSL após a importação](./assets/imgs/lab-rhel-wsl2/wsl-list-after-import.png)
 
 ### Iniciar a distribuição:
 
@@ -281,7 +281,7 @@ rhc connect --organization ORG_ID --activation-key KEY
 subscription-manager status
 ```
 
-![Status do subscription-manager: Registered](./assets/imgs/lab-rhel-wsl2/11-subscription-manager-status.png)
+![Status do subscription-manager: Registered](./assets/imgs/lab-rhel-wsl2/subscription-manager-status.png)
 
 Saída esperada:
 
