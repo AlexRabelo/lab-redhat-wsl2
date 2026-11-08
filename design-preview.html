@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Preview — Lab RHEL + WSL2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs/design-tokens.css">
+<style>
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: var(--leading-normal);
+    margin: 0;
+    padding: 0;
+  }
+  .hero {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-16);
+    margin: var(--space-8);
+    box-shadow: var(--shadow-card);
+    max-width: 800px;
+  }
+  .hero h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-4xl);
+    color: var(--color-foreground);
+    margin-bottom: var(--space-4);
+  }
+  .hero p {
+    color: var(--color-muted-foreground);
+    font-size: var(--font-size-lg);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-6);
+    margin: var(--space-8);
+    max-width: 1000px;
+  }
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin: var(--space-8) var(--space-6) var(--space-4) var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .badge-row {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+  }
+  .code-block {
+    margin: var(--space-4) var(--space-6);
+  }
+  footer {
+    text-align: center;
+    padding: var(--space-8);
+    color: var(--color-muted-foreground);
+    font-size: var(--font-size-sm);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-12);
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Lab RHEL + WSL2</h1>
+  <p>Padrão de design visual — Opção A: Ciano Elétrico · Alex Rabelo · Cloud, DevOps & SRE</p>
+</div>
+
+<h2 class="section-title">🔘 Botões</h2>
+<div class="grid">
+  <div class="card">
+    <button class="btn btn-primary">Primário (Ciano)</button>
+    <p style="margin-top:var(--space-2); color:var(--color-muted-foreground); font-size:var(--font-size-sm);">Ação principal</p>
+  </div>
+  <div class="card">
+    <button class="btn btn-outline">Outline</button>
+    <p style="margin-top:var(--space-2); color:var(--color-muted-foreground); font-size:var(--font-size-sm);">Ação secundária</p>
+  </div>
+  <div class="card">
+    <button class="btn btn-secondary">Secundário (Azul)</button>
+    <p style="margin-top:var(--space-2); color:var(--color-muted-foreground); font-size:var(--font-size-sm);">Ação alternativa</p>
+  </div>
+</div>
+
+<h2 class="section-title">🃏 Cards</h2>
+<div class="grid">
+  <div class="card">
+    <h3 style="margin-top:0; color:var(--color-foreground);">RHEL 10.2 no WSL2</h3>
+    <p style="color:var(--color-muted-foreground); margin-bottom:var(--space-4);">Laboratório de administração Linux com Red Hat Enterprise Linux rodando no Windows Subsystem for Linux 2.</p>
+    <button class="btn btn-primary btn-sm" style="padding:var(--button-padding-y-sm) var(--button-padding-x-sm); font-size:var(--button-font-size);">Ver tutorial</button>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0; color:var(--color-foreground);">Stack do Lab</h3>
+    <ul style="color:var(--color-muted-foreground); padding-left:var(--space-4);">
+      <li>RHEL 10.2</li>
+      <li>WSL2</li>
+      <li>Bash / Shell Script</li>
+      <li>GitHub Actions</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="section-title">🏷️ Badges</h2>
+<div class="badge-row">
+  <span class="badge badge-primary">EM CONSTRUÇÃO</span>
+  <span class="badge badge-secondary">Lab 1 · Base</h2>
+  <span class="badge badge-outline">RHEL</span>
+  <span class="badge badge-outline">WSL2</span>
+  <span class="badge" style="background:var(--color-success); color:var(--color-success-foreground);">Concluído</span>
+  <span class="badge" style="background:var(--color-warning); color:var(--color-warning-foreground);">Atenção</span>
+</div>
+
+<h2 class="section-title">⚠️ Alertas</h2>
+<div class="grid">
+  <div class="card alert">
+    <p style="margin:0; color:var(--color-foreground);"><strong>Segurança:</strong> Borre dados pessoais antes de publicar capturas de tela.</p>
+  </div>
+  <div class="card alert alert-destructive">
+    <p style="margin:0; color:var(--color-error-foreground);"><strong>Erro:</strong> Falha ao conectar ao Red Hat Subscription Manager.</p>
+  </div>
+</div>
+
+<h2 class="section-title">💻 Código</h2>
+<div class="code-block card">
+  <pre style="margin:0;"><code class="code">wsl --import RHEL-10.2 $HOME\WSL\RHEL10.2 $HOME\Downloads\rhel-10.2-x86_64-wsl2.wsl</code></pre>
+</div>
+
+<h2 class="section-title">📋 Tabela</h2>
+<div class="card">
+  <table style="width:100%; border-collapse:collapse; margin-top:var(--space-2);">
+    <thead>
+      <tr style="background:var(--table-header-bg); color:var(--table-header-fig); text-align:left;">
+        <th style="padding:var(--table-cell-padding-y) var(--table-cell-padding-x); border-bottom:1px solid var(--table-border);">Item</th>
+        <th style="padding:var(--table-cell-padding-y) var(--table-cell-padding-x); border-bottom:1px solid var(--table-border);">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:var(--table-row-bg);">
+        <td style="padding:var(--table-cell-padding-y) var(--table-cell-padding-x); border-bottom:1px solid var(--table-border); color:var(--table-row-fig);">Tutorial completo</td>
+        <td style="padding:var(--table-cell-padding-y) var(--table-cell-padding-x); border-bottom:1px solid var(--table-border); color:var(--table-row-fig);"><span class="badge badge-primary">Concluído</span></td>
+      </tr>
+      <tr style="background:var(--table-row-hover-bg);">
+        <td style="padding:var(--table-cell-padding-y) var(--table-cell-padding-x); border-bottom:1px solid var(--table-border); color:var(--table-row-fig);">Imagens (15/15)</td>
+        <td style="padding:var(--table-cell-padding-y) var(--table-cell-padding-x); border-bottom:1px solid var(--table-border); color:var(--table-row-fig);"><span class="badge badge-secondary">Pronto</span></td>
+      </tr>
+      <tr>
+        <td style="padding:var(--table-cell-padding-y) var(--table-cell-padding-x); color:var(--table-row-fig);">Publicação no GitHub</td>
+        <td style="padding:var(--table-cell-padding-y) var(--table-cell-padding-x); color:var(--table-row-fig);"><span class="badge" style="background:var(--color-success); color:var(--color-success-foreground);">No ar</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  Padrão de design: Opção A — Ciano Elétrico · Última atualização: 08/Nov/2026 · Alex Luiz Rabelo — Cloud, DevOps & SRE
+</footer>
+
+</body>
+</html>
