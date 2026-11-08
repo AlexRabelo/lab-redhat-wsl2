@@ -53,33 +53,10 @@ Saída esperada:
 Red Hat Enterprise Linux release 10.2
 ```
 
-![Verificação da versão RHEL 10.2 no WSL2](./assets/imgs/lab-rhel-wsl2/09-cat-redhat-release.png)
+![Verificação da versão RHEL 10.2 no WSL2](./assets/imgs/lab-rhel-wsl2/cat-redhat-release.png)
 ```
 
 ---
-
-## ⚠️ Cuidados de segurança (obrigatório)
-
-Antes de publicar qualquer imagem, **borre ou remova**:
-
-- [ ] Nome de usuário real do Windows (use `demo` ou borre)
-- [ ] E-mail da conta Red Hat
-- [ ] Senha ou Activation Key
-- [ ] Endereços IP internos ou nomes de máquina reais
-- [ ] Chaves de assinatura ou números de entitlement
-- [ ] Qualquer informação identificável pessoal (PII)
-
----
-
-## Checklist de conclusão
-
-- [ ] Todas as 15 imagens capturadas e salvas em `assets/imgs/lab-rhel-wsl2/`
-- [ ] Todas as tags `![...](./assets/imgs/lab-rhel-wsl2/XX-nome.png)` presentes no tutorial
-- [ ] Dados pessoais borrados ou removidos de todas as imagens
-- [ ] Imagens testadas em visualizador Markdown (caminhos corretos)
-
----
-
 *Última atualização: 08/Nov/2026*  
 *Autor: Alex Luiz Rabelo — Cloud, DevOps & SRE*  
 *Transparência de IA: Este arquivo foi compilado com auxílio de ferramentas de IA com base em fontes oficiais da Red Hat e Microsoft, e revisado/testado manualmente pelo autor.*
